@@ -1,6 +1,32 @@
 # Residência em TI - TJGO
 ## 🧠 Projeto Final – Aplicação de Aprendizagem de Máquina em Problemas Reais
 
+---
+
+## 🚀 Início Rápido - Ambiente Local
+
+### Executar o Notebook Localmente
+
+```bash
+# 1. Entrar no diretório do projeto
+cd ml-residencia-ti
+
+# 2. Ativar o ambiente virtual
+source venv/bin/activate
+
+# 3. Iniciar Jupyter
+jupyter notebook
+
+# 4. Abrir NotebookFinal-3.ipynb na interface
+```
+
+**Ambiente configurado:**
+- Python 3.11.14
+- Todas as dependências instaladas (pandas, numpy, matplotlib, seaborn, scipy, gdown, jupyter)
+- Arquivos: `requirements.txt` e `INSTRUCOES_AMBIENTE.md` (instruções detalhadas)
+
+---
+
 ## 🎯 Objetivo Geral
 Aplicar o ciclo completo de Aprendizagem de Máquina, seguindo o processo **CRISP-DM (Cross-Industry Standard Process for Data Mining)**, para desenvolver uma solução baseada em dados que responda a um problema de negócio real.
 
