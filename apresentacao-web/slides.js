@@ -151,7 +151,7 @@ const slides = [
                 <td class="highlight">0.43ms ✅</td>
             </tr>
         </table>
-        <div class="highlight" style="margin-top: 20px; padding: 15px; background: #f0f9ff; border-left: 4px solid #667eea;">
+        <div class="highlight" style="margin-top: 20px; padding: 15px; background: #f0f9ff; border-left: 4px solid #667eea; color: #333;">
             <strong>🎉 Resultado:</strong> AMBAS as abordagens superaram todas as metas!
         </div>
     </div>
@@ -550,7 +550,7 @@ const slides = [
             </div>
         </div>
 
-        <div class="highlight" style="margin-top: 20px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; text-align: center;">
+        <div class="highlight" style="margin-top: 20px; padding: 20px; background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%); color: white; border-radius: 10px; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
             <h3 style="margin: 0; font-size: 1.5em;">💡 Princípio: "Animes similares agradam os mesmos usuários"</h3>
         </div>
     </div>
@@ -637,7 +637,7 @@ const slides = [
     <div class="slide-content">
         <h1>🔬 Metodologia de Validação</h1>
 
-        <div class="highlight" style="padding: 15px; background: #f0f9ff; border-left: 4px solid #667eea; margin-bottom: 20px;">
+        <div class="highlight" style="padding: 15px; background: #f0f9ff; border-left: 4px solid #667eea; margin-bottom: 20px; color: #333;">
             <strong>⚖️ Objetivo:</strong> Comparação justa entre User-Based CF e Item-Based CF usando a mesma metodologia
         </div>
 
@@ -739,9 +739,9 @@ const slides = [
             </div>
         </div>
 
-        <div class="highlight" style="margin-top: 30px; padding: 20px; background: #f0f9ff; border-left: 4px solid #667eea;">
-            <h3 style="margin: 0;">💡 Conclusão</h3>
-            <p style="font-size: 1.2em; margin: 10px 0 0 0;">
+        <div class="highlight" style="margin-top: 30px; padding: 20px; background: #f0f9ff; border-left: 4px solid #667eea; color: #333;">
+            <h3 style="margin: 0; color: #333;">💡 Conclusão</h3>
+            <p style="font-size: 1.2em; margin: 10px 0 0 0; color: #333;">
                 ✅ User-Based é 13% mais preciso<br>
                 ✅ Item-Based erra apenas 0.10 pontos a mais<br>
                 ✅ <strong>AMBAS superam largamente as metas!</strong>
@@ -812,7 +812,7 @@ const slides = [
             </div>
         </div>
 
-        <div class="highlight" style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; text-align: center;">
+        <div class="highlight" style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%); color: white; border-radius: 10px; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
             <h3 style="margin: 0; font-size: 1.5em;">⚖️ Trade-off: User-Based é 13% mais preciso, mas Item-Based é 5x mais rápido!</h3>
         </div>
     </div>
@@ -877,7 +877,7 @@ const slides = [
             <div class="card">
                 <h3>💡 Cenário 1: Plataforma de Produção</h3>
                 <p><strong>Recomendação:</strong> Sistema Híbrido</p>
-                <div class="highlight" style="padding: 15px; background: #f0f9ff; border-radius: 8px; margin: 10px 0;">
+                <div class="highlight" style="padding: 15px; background: #f0f9ff; border-radius: 8px; margin: 10px 0; color: #333;">
                     <strong>70% Item-Based + 30% User-Based</strong>
                 </div>
                 <p>✅ Combina performance com diversidade</p>
@@ -907,7 +907,7 @@ const slides = [
             </div>
         </div>
 
-        <div class="highlight" style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; text-align: center;">
+        <div class="highlight" style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%); color: white; border-radius: 10px; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
             <h3 style="margin: 0; font-size: 1.5em;">💡 Insight: Personalizar a estratégia de recomendação ao perfil do usuário!</h3>
         </div>
     </div>
@@ -956,7 +956,7 @@ const slides = [
             </div>
         </div>
 
-        <div class="highlight" style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; text-align: center;">
+        <div class="highlight" style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%); color: white; border-radius: 10px; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
             <h3 style="margin: 0; font-size: 1.8em;">🎓 Aprendizado: Não existe solução universalmente melhor - tudo depende do contexto!</h3>
         </div>
     </div>
@@ -965,46 +965,27 @@ const slides = [
     // Slide 20: Agradecimentos
     `
     <div class="slide-content center">
-        <h1>🙏 Agradecimentos</h1>
+        <div style="font-size: 5em; margin-bottom: 20px;">🎓</div>
 
-        <div class="grid-2" style="margin: 40px 0;">
-            <div class="card">
-                <h3>🏛️ TJGO - Residência em TI</h3>
-                <p>Pela oportunidade e suporte</p>
+        <div class="team" style="margin: 40px 0;">
+            <div class="team-member">
+                <div class="avatar">👨🏻‍💻</div>
+                <h3>Ariel Angelo Guiliane<br>Mendes de Almeida</h3>
             </div>
-
-            <div class="card">
-                <h3>👨‍🏫 Professores e Orientadores</h3>
-                <p>Pelo conhecimento compartilhado</p>
-            </div>
-
-            <div class="card">
-                <h3>👥 Colegas da Residência</h3>
-                <p>Pelas discussões enriquecedoras</p>
-            </div>
-
-            <div class="card">
-                <h3>🌐 Comunidade Kaggle</h3>
-                <p>Pelo dataset MyAnimeList 2023</p>
+            <div class="team-member">
+                <div class="avatar">👨🏽‍💻</div>
+                <h3>João Pedro José Santos<br>da Silva Guedes</h3>
             </div>
         </div>
 
-        <div class="card" style="margin: 40px 0; padding: 30px;">
-            <h2 style="color: #667eea;">📂 Repositório GitHub</h2>
-            <p style="font-size: 1.3em; margin: 20px 0;">
-                <strong>github.com/sudjoao/ml-residencia-ti</strong>
-            </p>
-            <ul style="font-size: 1.1em; text-align: left; display: inline-block;">
-                <li>✅ Código completo</li>
-                <li>✅ Notebook Jupyter</li>
-                <li>✅ Documentação</li>
-                <li>✅ Apresentação web interativa</li>
-            </ul>
-        </div>
+        <h2 style="color: #667eea; font-size: 2.5em; margin-top: 40px;">Muito Obrigado!</h2>
+        <p style="font-size: 1.5em; margin-top: 20px; color: #764ba2;">
+            Perguntas?
+        </p>
 
-        <div style="font-size: 3em; margin: 40px 0;">🙋‍♂️</div>
-        <h2 style="color: #667eea; font-size: 2.5em;">Perguntas?</h2>
-        <p style="font-size: 1.3em; margin-top: 20px;">Muito obrigado!</p>
+        <div style="margin-top: 40px; font-size: 1.1em; color: #666;">
+            <p>🔗 GitHub: github.com/sudjoao/ml-residencia-ti</p>
+        </div>
     </div>
     `,
 ];
