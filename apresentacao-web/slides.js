@@ -97,7 +97,7 @@ const slides = [
     `
     <div class="slide-content">
         <h1>🎯 Objetivos e Métricas de Sucesso</h1>
-        
+
         <h2>Objetivos</h2>
         <div class="grid-2">
             <div class="card">
@@ -105,46 +105,55 @@ const slides = [
                 <p>Baseadas no histórico de cada usuário</p>
             </div>
             <div class="card">
+                <h3>✅ Comparar duas abordagens</h3>
+                <p>User-Based CF vs Item-Based CF</p>
+            </div>
+            <div class="card">
                 <h3>✅ Reduzir tempo de busca</h3>
-                <p>Sugestões relevantes imediatas</p>
+                <p>Aumentar satisfação e engajamento</p>
             </div>
             <div class="card">
-                <h3>✅ Aumentar satisfação</h3>
-                <p>Conteúdos alinhados com gostos individuais</p>
-            </div>
-            <div class="card">
-                <h3>✅ Utilizar padrões colaborativos</h3>
-                <p>Identificar usuários com gostos similares</p>
+                <h3>✅ Identificar trade-offs</h3>
+                <p>Acurácia vs Performance</p>
             </div>
         </div>
-        
+
         <h2>Metas de Sucesso (KPIs)</h2>
         <table>
             <tr>
                 <th>Métrica</th>
                 <th>Meta</th>
-                <th>Resultado Obtido</th>
-                <th>Status</th>
+                <th>User-Based CF</th>
+                <th>Item-Based CF</th>
             </tr>
             <tr>
                 <td><strong>MAE</strong></td>
                 <td>&lt; 1.5</td>
-                <td class="highlight">0.7682</td>
-                <td class="success">✅ Superado (49% melhor!)</td>
+                <td class="highlight">0.7682 ✅</td>
+                <td class="highlight">0.8689 ✅</td>
             </tr>
             <tr>
                 <td><strong>RMSE</strong></td>
                 <td>&lt; 2.0</td>
-                <td class="highlight">1.0210</td>
-                <td class="success">✅ Superado (49% melhor!)</td>
+                <td class="highlight">1.0210 ✅</td>
+                <td class="highlight">1.1599 ✅</td>
             </tr>
             <tr>
                 <td><strong>Cobertura</strong></td>
                 <td>&gt; 1.000 usuários</td>
-                <td class="highlight">5.000 usuários</td>
-                <td class="success">✅ Superado (5x maior!)</td>
+                <td class="highlight">5.000 ✅</td>
+                <td class="highlight">5.000 ✅</td>
+            </tr>
+            <tr>
+                <td><strong>Tempo/Predição</strong></td>
+                <td>&lt; 5ms</td>
+                <td class="highlight">2.16ms ✅</td>
+                <td class="highlight">0.43ms ✅</td>
             </tr>
         </table>
+        <div class="highlight" style="margin-top: 20px; padding: 15px; background: #f0f9ff; border-left: 4px solid #667eea;">
+            <strong>🎉 Resultado:</strong> AMBAS as abordagens superaram todas as metas!
+        </div>
     </div>
     `,
     
@@ -397,14 +406,14 @@ const slides = [
     </div>
     `,
 
-    // Slide 11: Exemplo Real de Recomendação
+    // Slide 11: Exemplo Real de Recomendação - User-Based CF
     `
     <div class="slide-content">
-        <h1>🎬 Exemplo Real de Recomendação</h1>
+        <h1>🎬 Exemplo Real de Recomendação - User-Based CF</h1>
 
         <div class="center" style="margin: 20px 0;">
             <h2 style="color: #667eea;">Usuário ID: 1</h2>
-            <p style="font-size: 1.2em;">Top 10 Recomendações Personalizadas</p>
+            <p style="font-size: 1.2em;">Top 10 Recomendações Personalizadas (User-Based)</p>
         </div>
 
         <table>
@@ -488,7 +497,7 @@ const slides = [
         </table>
 
         <div class="card" style="margin-top: 20px;">
-            <h3>✅ Análise das Recomendações</h3>
+            <h3>✅ Análise das Recomendações (User-Based CF)</h3>
             <ul>
                 <li>🎭 Diversidade de gêneros (Comedy, Sports, Fantasy, Drama)</li>
                 <li>📺 Diferentes tipos (TV, Special, Movie)</li>
@@ -499,13 +508,141 @@ const slides = [
     </div>
     `,
 
-    // Slide 12: Metodologia de Validação
+    // Slide 12: Segunda Abordagem - Item-Based CF
+    `
+    <div class="slide-content">
+        <h1>🔄 Segunda Abordagem: Item-Based CF</h1>
+
+        <div class="center" style="margin: 20px 0;">
+            <h2 style="color: #667eea;">Filtragem Colaborativa Item-Item (Anime-Anime)</h2>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3>🔍 Diferença Fundamental</h3>
+                <table style="font-size: 0.9em;">
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>User-Based</th>
+                        <th>Item-Based</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Similaridade</strong></td>
+                        <td>Entre USUÁRIOS</td>
+                        <td class="highlight">Entre ANIMES</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Princípio</strong></td>
+                        <td>"Usuários similares gostam..."</td>
+                        <td class="highlight">"Animes similares agradam..."</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Vantagens do Item-Based</h3>
+                <ul>
+                    <li><strong>5x mais rápido</strong> nas predições (0.43ms vs 2.16ms)</li>
+                    <li><strong>87% mais rápido</strong> no treinamento (7.65s vs 120s)</li>
+                    <li><strong>Melhor escalabilidade</strong> (matriz item-item mais estável)</li>
+                    <li><strong>Recomendações consistentes</strong> com preferências estabelecidas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight" style="margin-top: 20px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; text-align: center;">
+            <h3 style="margin: 0; font-size: 1.5em;">💡 Princípio: "Animes similares agradam os mesmos usuários"</h3>
+        </div>
+    </div>
+    `,
+
+    // Slide 13: Exemplo Real - Item-Based CF
+    `
+    <div class="slide-content">
+        <h1>🎬 Exemplo Real - Item-Based CF</h1>
+
+        <div class="center" style="margin: 20px 0;">
+            <h2 style="color: #667eea;">Mesmo Usuário (ID: 1) - Para Comparação Direta</h2>
+        </div>
+
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Anime</th>
+                <th>Rating Predito</th>
+                <th>Score MAL</th>
+                <th>Gêneros</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><strong>Kara no Kyoukai 1</strong></td>
+                <td class="highlight">7.88</td>
+                <td>7.82</td>
+                <td>Action, Mystery</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><strong>Fate/stay night</strong></td>
+                <td class="highlight">7.85</td>
+                <td>7.32</td>
+                <td>Action, Fantasy</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><strong>Ghost in the Shell</strong></td>
+                <td class="highlight">7.80</td>
+                <td>8.04</td>
+                <td>Sci-Fi, Mecha</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><strong>Ergo Proxy</strong></td>
+                <td class="highlight">7.78</td>
+                <td>7.93</td>
+                <td>Mystery, Sci-Fi</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><strong>Serial Experiments Lain</strong></td>
+                <td class="highlight">7.73</td>
+                <td>8.01</td>
+                <td>Sci-Fi, Mystery</td>
+            </tr>
+        </table>
+
+        <div class="grid-2" style="margin-top: 20px;">
+            <div class="card">
+                <h3>📊 Observações - Item-Based</h3>
+                <ul>
+                    <li>✅ Ratings preditos mais <strong>conservadores</strong> (7.7-7.9 vs 9.6-10.0)</li>
+                    <li>✅ Animes com <strong>scores MAL mais altos</strong> (7.3-8.0)</li>
+                    <li>✅ Maior <strong>consistência de gêneros</strong> (Action, Sci-Fi, Mystery)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>⚖️ Comparação</h3>
+                <ul>
+                    <li><strong>User-Based:</strong> Mais diversidade, descoberta</li>
+                    <li><strong>Item-Based:</strong> Mais segurança, alinhamento</li>
+                    <li>🎯 Ambas válidas, propósitos diferentes!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    `,
+
+    // Slide 14: Metodologia de Validação
     `
     <div class="slide-content">
         <h1>🔬 Metodologia de Validação</h1>
 
+        <div class="highlight" style="padding: 15px; background: #f0f9ff; border-left: 4px solid #667eea; margin-bottom: 20px;">
+            <strong>⚖️ Objetivo:</strong> Comparação justa entre User-Based CF e Item-Based CF usando a mesma metodologia
+        </div>
+
         <div class="card" style="margin: 20px 0;">
-            <h2>Abordagem: Validação com Amostra Aleatória</h2>
+            <h2>Abordagem: Validação com Amostra Aleatória (mesma para ambas)</h2>
             <div class="grid-2" style="margin-top: 20px;">
                 <div>
                     <h3>📊 Tamanho da Amostra</h3>
@@ -525,313 +662,349 @@ const slides = [
         </div>
 
         <div class="card" style="margin: 20px 0;">
-            <h2>🎯 Método de Avaliação</h2>
-            <ol style="font-size: 1.2em;">
-                <li>Seleção aleatória de 50.000 ratings (seed=42)</li>
-                <li>Predição de rating para cada par (usuário, anime)</li>
-                <li>Comparação entre rating real vs. rating predito</li>
-                <li>Cálculo de métricas de erro (MAE e RMSE)</li>
-            </ol>
-        </div>
-
-        <div class="card" style="margin: 20px 0;">
-            <h2>📐 Métricas Utilizadas</h2>
+            <h2>📐 Métricas Avaliadas</h2>
             <div class="grid-2">
                 <div>
-                    <h3>MAE (Mean Absolute Error)</h3>
-                    <div class="formula">
-                        MAE = (1/n) × Σ|rating_real - rating_predito|
-                    </div>
-                    <p>Erro médio absoluto em pontos de rating</p>
+                    <h3>🎯 Acurácia</h3>
+                    <ul>
+                        <li><strong>MAE</strong> - Mean Absolute Error</li>
+                        <li><strong>RMSE</strong> - Root Mean Squared Error</li>
+                    </ul>
                 </div>
                 <div>
-                    <h3>RMSE (Root Mean Squared Error)</h3>
-                    <div class="formula">
-                        RMSE = √[(1/n) × Σ(rating_real - rating_predito)²]
-                    </div>
-                    <p>Penaliza mais erros grandes (outliers)</p>
+                    <h3>⚡ Performance</h3>
+                    <ul>
+                        <li><strong>Tempo de Treinamento</strong></li>
+                        <li><strong>Tempo de Predição</strong></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
     `,
 
-    // Slide 13: Resultados - Métricas
+    // Slide 15: Comparação de Acurácia
     `
     <div class="slide-content">
-        <h1>📈 Resultados - Métricas Alcançadas</h1>
+        <h1>📈 Comparação de Acurácia 🎯</h1>
 
-        <div class="center" style="margin: 30px 0;">
-            <h2 style="color: #667eea; font-size: 2.5em;">🎉 Todas as Metas Superadas!</h2>
+        <div class="center" style="margin: 20px 0;">
+            <h2 style="color: #667eea; font-size: 2em;">Resultados de Acurácia</h2>
         </div>
+
+        <table>
+            <tr>
+                <th>Métrica</th>
+                <th>Meta</th>
+                <th>User-Based</th>
+                <th>Item-Based</th>
+                <th>Melhor</th>
+            </tr>
+            <tr>
+                <td><strong>MAE</strong></td>
+                <td>&lt; 1.5</td>
+                <td class="highlight">0.7682</td>
+                <td class="highlight">0.8689</td>
+                <td class="success">User-Based (13% melhor)</td>
+            </tr>
+            <tr>
+                <td><strong>RMSE</strong></td>
+                <td>&lt; 2.0</td>
+                <td class="highlight">1.0210</td>
+                <td class="highlight">1.1599</td>
+                <td class="success">User-Based (14% melhor)</td>
+            </tr>
+            <tr>
+                <td><strong>Status</strong></td>
+                <td>-</td>
+                <td class="success">✅ 49% melhor</td>
+                <td class="success">✅ 42% melhor</td>
+                <td class="success">Ambas superam!</td>
+            </tr>
+        </table>
+
+        <div class="grid-2" style="margin-top: 30px;">
+            <div class="metric-box" style="width: 100%;">
+                <h3>User-Based CF</h3>
+                <div class="value" style="font-size: 2.5em;">0.77</div>
+                <p>pontos de erro médio</p>
+                <p class="success">Mais preciso</p>
+            </div>
+
+            <div class="metric-box" style="width: 100%;">
+                <h3>Item-Based CF</h3>
+                <div class="value" style="font-size: 2.5em;">0.87</div>
+                <p>pontos de erro médio</p>
+                <p class="success">Ainda excelente!</p>
+            </div>
+        </div>
+
+        <div class="highlight" style="margin-top: 30px; padding: 20px; background: #f0f9ff; border-left: 4px solid #667eea;">
+            <h3 style="margin: 0;">💡 Conclusão</h3>
+            <p style="font-size: 1.2em; margin: 10px 0 0 0;">
+                ✅ User-Based é 13% mais preciso<br>
+                ✅ Item-Based erra apenas 0.10 pontos a mais<br>
+                ✅ <strong>AMBAS superam largamente as metas!</strong>
+            </p>
+        </div>
+    </div>
+    `,
+
+    // Slide 16: Comparação de Performance
+    `
+    <div class="slide-content">
+        <h1>⚡ Comparação de Performance</h1>
+
+        <div class="center" style="margin: 20px 0;">
+            <h2 style="color: #667eea; font-size: 2em;">Resultados de Performance</h2>
+        </div>
+
+        <table>
+            <tr>
+                <th>Métrica</th>
+                <th>User-Based</th>
+                <th>Item-Based</th>
+                <th>Vantagem</th>
+            </tr>
+            <tr>
+                <td><strong>Tempo de Treinamento</strong></td>
+                <td>~120s</td>
+                <td class="highlight">7.65s</td>
+                <td class="success">Item-Based 16x mais rápido</td>
+            </tr>
+            <tr>
+                <td><strong>Tempo de Predição (50k)</strong></td>
+                <td>107.79s</td>
+                <td class="highlight">21.63s</td>
+                <td class="success">Item-Based 5x mais rápido</td>
+            </tr>
+            <tr>
+                <td><strong>Tempo/Predição</strong></td>
+                <td>2.16 ms</td>
+                <td class="highlight">0.43 ms</td>
+                <td class="success">Item-Based 5x mais rápido</td>
+            </tr>
+            <tr>
+                <td><strong>Meta (&lt; 5ms)</strong></td>
+                <td class="success">✅ Atende</td>
+                <td class="success">✅ Atende</td>
+                <td class="success">Ambas viáveis!</td>
+            </tr>
+        </table>
+
+        <div class="grid-2" style="margin-top: 30px;">
+            <div class="card">
+                <h3>🐢 User-Based CF</h3>
+                <ul>
+                    <li>⚠️ Mais lento (2.16ms/predição)</li>
+                    <li>⚠️ Treinamento demorado (120s)</li>
+                    <li>✅ Ainda atende requisitos de produção</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🚀 Item-Based CF</h3>
+                <ul>
+                    <li>✅ Muito mais rápido (0.43ms/predição)</li>
+                    <li>✅ Treinamento 16x mais rápido</li>
+                    <li>✅ Melhor para produção em escala</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight" style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; text-align: center;">
+            <h3 style="margin: 0; font-size: 1.5em;">⚖️ Trade-off: User-Based é 13% mais preciso, mas Item-Based é 5x mais rápido!</h3>
+        </div>
+    </div>
+    `,
+
+    // Slide 17: Análise Qualitativa Comparativa
+    `
+    <div class="slide-content">
+        <h1>📊 Análise Qualitativa Comparativa</h1>
 
         <div class="grid-2">
-            <div class="metric-box" style="width: 100%;">
-                <h3>MAE</h3>
-                <div class="value">0.7682</div>
-                <p style="margin-top: 10px;">Meta: &lt; 1.5</p>
-                <p class="success" style="font-size: 1.3em; margin-top: 10px;">✅ 49% melhor que a meta!</p>
+            <div class="card">
+                <h3>👥 User-Based CF</h3>
+                <h4 style="color: #28a745;">✅ Pontos Fortes</h4>
+                <ul>
+                    <li>Maior precisão (13% melhor)</li>
+                    <li>Maior diversidade</li>
+                    <li>Descoberta de conteúdo</li>
+                </ul>
+                <h4 style="color: #ffc107; margin-top: 15px;">⚠️ Limitações</h4>
+                <ul>
+                    <li>5x mais lento</li>
+                    <li>Escalabilidade limitada</li>
+                    <li>Cold start com usuários novos</li>
+                </ul>
             </div>
 
-            <div class="metric-box" style="width: 100%;">
-                <h3>RMSE</h3>
-                <div class="value">1.0210</div>
-                <p style="margin-top: 10px;">Meta: &lt; 2.0</p>
-                <p class="success" style="font-size: 1.3em; margin-top: 10px;">✅ 49% melhor que a meta!</p>
+            <div class="card">
+                <h3>🎬 Item-Based CF</h3>
+                <h4 style="color: #28a745;">✅ Pontos Fortes</h4>
+                <ul>
+                    <li>5x mais rápido</li>
+                    <li>Melhor escalabilidade</li>
+                    <li>Recomendações consistentes</li>
+                </ul>
+                <h4 style="color: #ffc107; margin-top: 15px;">⚠️ Limitações</h4>
+                <ul>
+                    <li>13% menos preciso</li>
+                    <li>Menor diversidade</li>
+                    <li>Mais conservador</li>
+                </ul>
             </div>
         </div>
 
-        <div class="card" style="margin: 30px 0;">
-            <h2>📊 Interpretação dos Resultados</h2>
-            <ul style="font-size: 1.2em;">
-                <li>✅ <strong>MAE = 0.77:</strong> Em média, as predições erram por apenas 0.77 pontos em uma escala de 1-10</li>
-                <li>✅ <strong>Erro relativo:</strong> ~7.7% de erro médio</li>
-                <li>✅ <strong>RMSE > MAE:</strong> Indica presença de alguns outliers, mas ainda controlados</li>
-                <li>✅ <strong>Alta precisão:</strong> Modelo demonstra excelente capacidade preditiva</li>
-                <li>✅ <strong>Cobertura:</strong> 5.000 usuários atendidos simultaneamente</li>
+        <div class="card" style="margin-top: 30px;">
+            <h3>⚠️ Limitações Comuns</h3>
+            <ul style="font-size: 1.1em;">
+                <li>Cold Start (novos usuários/animes sem histórico)</li>
+                <li>Esparsidade dos dados (densidade &lt; 5%)</li>
+                <li>Amostra limitada a 5.000 usuários</li>
             </ul>
         </div>
-
-        <div class="card" style="margin: 20px 0;">
-            <h2>🎯 Comparação com Baseline</h2>
-            <table>
-                <tr>
-                    <th>Abordagem</th>
-                    <th>MAE</th>
-                    <th>RMSE</th>
-                </tr>
-                <tr>
-                    <td>Baseline (média global)</td>
-                    <td>~1.5</td>
-                    <td>~2.0</td>
-                </tr>
-                <tr>
-                    <td><strong>Nosso Modelo</strong></td>
-                    <td class="highlight">0.7682</td>
-                    <td class="highlight">1.0210</td>
-                </tr>
-                <tr>
-                    <td><strong>Melhoria</strong></td>
-                    <td class="success">49%</td>
-                    <td class="success">49%</td>
-                </tr>
-            </table>
-        </div>
     </div>
     `,
 
-    // Slide 14: Análise Qualitativa
+    // Slide 18: Recomendações de Uso
     `
     <div class="slide-content">
-        <h1>🎯 Análise Qualitativa</h1>
+        <h1>🎯 Recomendações de Uso</h1>
 
-        <h2>✅ Pontos Fortes do Modelo</h2>
         <div class="grid-2">
             <div class="card">
-                <h3>🎯 Personalização Efetiva</h3>
-                <p>Recomendações alinhadas com histórico individual</p>
+                <h3>💡 Cenário 1: Plataforma de Produção</h3>
+                <p><strong>Recomendação:</strong> Sistema Híbrido</p>
+                <div class="highlight" style="padding: 15px; background: #f0f9ff; border-radius: 8px; margin: 10px 0;">
+                    <strong>70% Item-Based + 30% User-Based</strong>
+                </div>
+                <p>✅ Combina performance com diversidade</p>
             </div>
+
             <div class="card">
-                <h3>🎭 Diversidade</h3>
-                <p>Variedade de gêneros e tipos de anime</p>
+                <h3>💡 Cenário 2: Recursos Limitados</h3>
+                <p><strong>Recomendação:</strong> Item-Based CF exclusivamente</p>
+                <p>✅ 5x mais rápido</p>
+                <p>✅ Apenas 13% de perda em acurácia</p>
             </div>
+
             <div class="card">
-                <h3>📊 Precisão Alta</h3>
-                <p>Ratings preditos muito próximos dos reais</p>
+                <h3>💡 Cenário 3: Máxima Precisão</h3>
+                <p><strong>Recomendação:</strong> User-Based CF</p>
+                <p>✅ MAE 13% melhor</p>
+                <p>✅ Maior diversidade</p>
             </div>
+
             <div class="card">
-                <h3>⚡ Performance</h3>
-                <p>Processamento rápido (~2 minutos)</p>
+                <h3>💡 Cenário 4: Perfis Diferentes</h3>
+                <ul>
+                    <li>👶 <strong>Novos (&lt;10 avaliações):</strong> Item-Based</li>
+                    <li>👤 <strong>Moderados (10-100):</strong> 70% Item + 30% User</li>
+                    <li>🌟 <strong>Ativos (100+):</strong> 50% Item + 50% User</li>
+                </ul>
             </div>
         </div>
 
-        <h2 style="margin-top: 30px;">⚠️ Limitações Identificadas</h2>
-        <div class="grid-2">
-            <div class="card">
-                <h3>❄️ Cold Start</h3>
-                <p><strong>Problema:</strong> Dificuldade com novos usuários/animes sem histórico</p>
-                <p><strong>Solução futura:</strong> Híbrido com filtragem baseada em conteúdo</p>
-            </div>
-            <div class="card">
-                <h3>📊 Esparsidade</h3>
-                <p><strong>Problema:</strong> Matriz muito esparsa (&lt;1% densidade)</p>
-                <p><strong>Solução futura:</strong> Técnicas de fatoração de matriz (SVD)</p>
-            </div>
-            <div class="card">
-                <h3>⚖️ Escalabilidade</h3>
-                <p><strong>Problema:</strong> Matriz de similaridade cresce quadraticamente</p>
-                <p><strong>Solução futura:</strong> Aproximação com LSH ou clustering</p>
-            </div>
-            <div class="card">
-                <h3>🔄 Atualização</h3>
-                <p><strong>Problema:</strong> Necessita recalcular similaridades periodicamente</p>
-                <p><strong>Solução futura:</strong> Atualização incremental</p>
-            </div>
+        <div class="highlight" style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; text-align: center;">
+            <h3 style="margin: 0; font-size: 1.5em;">💡 Insight: Personalizar a estratégia de recomendação ao perfil do usuário!</h3>
         </div>
     </div>
     `,
 
-    // Slide 15: Principais Conquistas
+    // Slide 19: Principais Conquistas
     `
     <div class="slide-content">
         <h1>🏆 Principais Conquistas</h1>
 
-        <div class="center" style="margin: 30px 0;">
-            <div style="font-size: 4em;">🎉</div>
-            <h2 style="color: #667eea; font-size: 2em;">Projeto Completo e Funcional!</h2>
-        </div>
-
         <div class="grid-2">
             <div class="card">
-                <h3>✅ Metodologia CRISP-DM</h3>
-                <p>Todas as 6 fases implementadas com rigor</p>
+                <h3>✅ Metodologia CRISP-DM Completa</h3>
+                <p>Todas as 6 fases executadas rigorosamente</p>
             </div>
+
             <div class="card">
-                <h3>✅ Metas Superadas</h3>
-                <p>MAE e RMSE 49% melhores que baseline</p>
+                <h3>✅ Duas Abordagens Implementadas</h3>
+                <ul>
+                    <li>User-Based CF: MAE 0.7682 (49% melhor)</li>
+                    <li>Item-Based CF: MAE 0.8689 (42% melhor)</li>
+                </ul>
             </div>
+
             <div class="card">
-                <h3>✅ Pipeline Robusto</h3>
-                <p>5 transformadores customizados com Scikit-learn</p>
+                <h3>✅ Análise Comparativa Completa</h3>
+                <ul>
+                    <li>Acurácia: User-Based 13% melhor</li>
+                    <li>Performance: Item-Based 5x mais rápido</li>
+                </ul>
             </div>
+
             <div class="card">
-                <h3>✅ Código Reproduzível</h3>
-                <p>Notebook documentado e versionado no GitHub</p>
+                <h3>✅ Recomendações Práticas</h3>
+                <p>Para diferentes cenários de uso, incluindo sistema híbrido</p>
             </div>
+
             <div class="card">
-                <h3>✅ Escalabilidade</h3>
-                <p>5.000 usuários processados eficientemente</p>
+                <h3>✅ Pipeline Reprodutível</h3>
+                <p>Scikit-learn com melhores práticas</p>
             </div>
+
             <div class="card">
                 <h3>✅ Documentação Completa</h3>
-                <p>Relatório técnico detalhado</p>
+                <p>Código aberto no GitHub</p>
             </div>
         </div>
 
-        <h2 style="margin-top: 30px;">🚀 Trabalhos Futuros</h2>
-        <div class="card">
-            <ul style="font-size: 1.2em;">
-                <li>🔀 <strong>Sistema Híbrido:</strong> Combinar filtragem colaborativa + baseada em conteúdo</li>
-                <li>🧠 <strong>Deep Learning:</strong> Testar redes neurais (Neural Collaborative Filtering)</li>
-                <li>📊 <strong>Métricas Adicionais:</strong> Precision@K, Recall@K, NDCG</li>
-                <li>⚡ <strong>Otimização:</strong> Implementar aproximações para maior escala</li>
-                <li>🌐 <strong>Deploy:</strong> API REST para integração com aplicações</li>
-                <li>📱 <strong>Interface:</strong> Aplicação web para demonstração</li>
-            </ul>
+        <div class="highlight" style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; text-align: center;">
+            <h3 style="margin: 0; font-size: 1.8em;">🎓 Aprendizado: Não existe solução universalmente melhor - tudo depende do contexto!</h3>
         </div>
     </div>
     `,
 
-    // Slide 16: Aplicabilidade no TJGO
-    `
-    <div class="slide-content">
-        <h1>⚖️ Aplicabilidade no TJGO</h1>
-
-        <div class="center" style="margin: 20px 0;">
-            <h2 style="color: #667eea;">Como aplicar sistemas de recomendação no contexto jurídico?</h2>
-        </div>
-
-        <div class="card" style="margin: 20px 0;">
-            <h2>🎯 Casos de Uso Potenciais</h2>
-
-            <div class="grid-2" style="margin-top: 20px;">
-                <div class="card">
-                    <h3>📚 Recomendação de Jurisprudência</h3>
-                    <p>Sugerir decisões similares baseadas em casos anteriores</p>
-                </div>
-                <div class="card">
-                    <h3>📄 Documentos Relacionados</h3>
-                    <p>Recomendar petições, pareceres e modelos relevantes</p>
-                </div>
-                <div class="card">
-                    <h3>👨‍⚖️ Distribuição de Processos</h3>
-                    <p>Alocar processos para juízes com expertise similar</p>
-                </div>
-                <div class="card">
-                    <h3>📖 Legislação Aplicável</h3>
-                    <p>Sugerir leis e artigos relevantes ao caso</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" style="margin: 20px 0;">
-            <h2>💡 Benefícios Esperados</h2>
-            <ul style="font-size: 1.2em;">
-                <li>⚡ <strong>Agilidade:</strong> Redução do tempo de pesquisa jurídica</li>
-                <li>🎯 <strong>Precisão:</strong> Decisões mais fundamentadas e consistentes</li>
-                <li>📊 <strong>Padronização:</strong> Uniformidade nas decisões judiciais</li>
-                <li>🤖 <strong>Automação:</strong> Menos trabalho manual repetitivo</li>
-                <li>📈 <strong>Produtividade:</strong> Magistrados focam em análise, não em busca</li>
-            </ul>
-        </div>
-
-        <div class="card" style="margin: 20px 0;">
-            <h2>🔧 Adaptações Necessárias</h2>
-            <ul style="font-size: 1.2em;">
-                <li>📝 Usar embeddings de texto jurídico (BERT Legal)</li>
-                <li>🔍 Considerar metadados (comarca, vara, assunto, classe processual)</li>
-                <li>⚖️ Garantir transparência e explicabilidade das recomendações</li>
-                <li>🔒 Respeitar sigilo e privacidade dos dados processuais</li>
-            </ul>
-        </div>
-    </div>
-    `,
-
-    // Slide 17: Conclusão e Agradecimentos
+    // Slide 20: Agradecimentos
     `
     <div class="slide-content center">
-        <div style="font-size: 5em; margin-bottom: 20px;">🎓</div>
-        <h1>Conclusão</h1>
+        <h1>🙏 Agradecimentos</h1>
 
-        <div class="card" style="margin: 30px 0; text-align: left;">
-            <h2 style="text-align: center; color: #667eea;">Aprendizados Principais</h2>
-            <ul style="font-size: 1.2em; margin-top: 20px;">
-                <li>✅ Importância da metodologia estruturada (CRISP-DM)</li>
-                <li>✅ Qualidade dos dados é fundamental</li>
-                <li>✅ Simplicidade pode ser eficaz (não precisa sempre Deep Learning)</li>
-                <li>✅ Reprodutibilidade e documentação são essenciais</li>
-                <li>✅ Sempre validar com métricas quantitativas</li>
+        <div class="grid-2" style="margin: 40px 0;">
+            <div class="card">
+                <h3>🏛️ TJGO - Residência em TI</h3>
+                <p>Pela oportunidade e suporte</p>
+            </div>
+
+            <div class="card">
+                <h3>👨‍🏫 Professores e Orientadores</h3>
+                <p>Pelo conhecimento compartilhado</p>
+            </div>
+
+            <div class="card">
+                <h3>👥 Colegas da Residência</h3>
+                <p>Pelas discussões enriquecedoras</p>
+            </div>
+
+            <div class="card">
+                <h3>🌐 Comunidade Kaggle</h3>
+                <p>Pelo dataset MyAnimeList 2023</p>
+            </div>
+        </div>
+
+        <div class="card" style="margin: 40px 0; padding: 30px;">
+            <h2 style="color: #667eea;">📂 Repositório GitHub</h2>
+            <p style="font-size: 1.3em; margin: 20px 0;">
+                <strong>github.com/sudjoao/ml-residencia-ti</strong>
+            </p>
+            <ul style="font-size: 1.1em; text-align: left; display: inline-block;">
+                <li>✅ Código completo</li>
+                <li>✅ Notebook Jupyter</li>
+                <li>✅ Documentação</li>
+                <li>✅ Apresentação web interativa</li>
             </ul>
         </div>
 
-        <div class="metric-box" style="width: 80%; margin: 30px auto;">
-            <h2 style="color: white; margin-bottom: 20px;">Resultados Finais</h2>
-            <div style="display: flex; justify-content: space-around; margin-top: 20px;">
-                <div>
-                    <div class="value">0.7682</div>
-                    <p>MAE</p>
-                </div>
-                <div>
-                    <div class="value">1.0210</div>
-                    <p>RMSE</p>
-                </div>
-                <div>
-                    <div class="value">5.000</div>
-                    <p>Usuários</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="team" style="margin: 40px 0;">
-            <div class="team-member">
-                <div class="avatar">👨🏻‍💻</div>
-                <h3>Ariel Angelo Guiliane<br>Mendes de Almeida</h3>
-            </div>
-            <div class="team-member">
-                <div class="avatar">👨🏽‍💻</div>
-                <h3>João Pedro José Santos<br>da Silva Guedes</h3>
-            </div>
-        </div>
-
-        <h2 style="color: #667eea; font-size: 2.5em; margin-top: 40px;">Obrigado!</h2>
-        <p style="font-size: 1.5em; margin-top: 20px; color: #764ba2;">
-            Perguntas?
-        </p>
-
-        <div style="margin-top: 40px; font-size: 1.1em; color: #666;">
-            <p>📧 Contato: ariel.almeida@tjgo.jus.br | joao.guedes@tjgo.jus.br</p>
-            <p>🔗 GitHub: github.com/sudjoao/ml-residencia-ti</p>
-        </div>
+        <div style="font-size: 3em; margin: 40px 0;">🙋‍♂️</div>
+        <h2 style="color: #667eea; font-size: 2.5em;">Perguntas?</h2>
+        <p style="font-size: 1.3em; margin-top: 20px;">Muito obrigado!</p>
     </div>
     `,
 ];
