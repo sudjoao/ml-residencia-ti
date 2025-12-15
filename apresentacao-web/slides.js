@@ -412,8 +412,9 @@ const slides = [
         <h1>🎬 Exemplo Real de Recomendação - User-Based CF</h1>
 
         <div class="center" style="margin: 20px 0;">
-            <h2 style="color: #667eea;">Usuário ID: 1</h2>
-            <p style="font-size: 1.2em;">Top 10 Recomendações Personalizadas (User-Based)</p>
+            <h2 style="color: #667eea;">Usuário ID: 48</h2>
+            <p style="font-size: 1.1em;">Total de avaliações: 556 | Rating médio: 6.28</p>
+            <p style="font-size: 1em; color: #764ba2;">Favoritos: Dennou Coil (10), Fullmetal Alchemist (9)</p>
         </div>
 
         <table>
@@ -421,78 +422,37 @@ const slides = [
                 <th>#</th>
                 <th>Anime</th>
                 <th>Gêneros</th>
-                <th>Tipo</th>
                 <th>Rating Predito</th>
             </tr>
             <tr>
                 <td>1</td>
-                <td><strong>Gintama: Yorinuki Gintama-san on Theater 2D</strong></td>
-                <td>Comedy, Sci-Fi</td>
-                <td>Special</td>
-                <td class="highlight">10.0</td>
+                <td><strong>Ketsuinu</strong></td>
+                <td>Comedy</td>
+                <td class="highlight">10.00</td>
             </tr>
             <tr>
                 <td>2</td>
-                <td><strong>Ping Pong the Animation</strong></td>
-                <td>Sports, Drama</td>
-                <td>TV</td>
-                <td class="highlight">9.9</td>
+                <td><strong>Ashita no Eleven-tachi</strong></td>
+                <td>Sports</td>
+                <td class="highlight">10.00</td>
             </tr>
             <tr>
                 <td>3</td>
-                <td><strong>Gintama: The Final</strong></td>
-                <td>Comedy, Action</td>
-                <td>Movie</td>
-                <td class="highlight">9.9</td>
+                <td><strong>Jakusansei Million Arthur</strong></td>
+                <td>Fantasy</td>
+                <td class="highlight">9.72</td>
             </tr>
             <tr>
                 <td>4</td>
-                <td><strong>Gintama°: Aizome Kaori-hen</strong></td>
-                <td>Comedy, Parody</td>
-                <td>Special</td>
-                <td class="highlight">9.8</td>
+                <td><strong>Arifureta Itsuka</strong></td>
+                <td>Fantasy</td>
+                <td class="highlight">9.69</td>
             </tr>
             <tr>
                 <td>5</td>
-                <td><strong>Gintama: The Semi-Final</strong></td>
-                <td>Comedy, Action</td>
-                <td>Special</td>
-                <td class="highlight">9.8</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td><strong>Gintama: Nanigoto mo Saisho ga Kanjin</strong></td>
-                <td>Comedy, Samurai</td>
-                <td>Special</td>
-                <td class="highlight">9.7</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td><strong>Mushishi Zoku Shou 2nd Season</strong></td>
-                <td>Fantasy, Mystery</td>
-                <td>TV</td>
-                <td class="highlight">9.7</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td><strong>Gintama: Shiroyasha Koutan</strong></td>
-                <td>Comedy, Action</td>
-                <td>Special</td>
-                <td class="highlight">9.7</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td><strong>Gintama Movie 2: Kanketsu-hen - Yorozuya yo Eien Nare</strong></td>
-                <td>Comedy, Action</td>
-                <td>Movie</td>
-                <td class="highlight">9.6</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td><strong>Gintama': Futon ni Haitte kara Buki Nokoshi ni Kizuite</strong></td>
-                <td>Comedy</td>
-                <td>Special</td>
-                <td class="highlight">9.6</td>
+                <td><strong>Tsushima Maru</strong></td>
+                <td>Drama</td>
+                <td class="highlight">9.60</td>
             </tr>
         </table>
 
@@ -500,9 +460,9 @@ const slides = [
             <h3>✅ Análise das Recomendações (User-Based CF)</h3>
             <ul>
                 <li>🎭 Diversidade de gêneros (Comedy, Sports, Fantasy, Drama)</li>
-                <li>📺 Diferentes tipos (TV, Special, Movie)</li>
                 <li>⭐ Ratings preditos muito altos (9.6 - 10.0)</li>
-                <li>🎯 Forte alinhamento com perfil do usuário (fã de Gintama)</li>
+                <li>🎯 Sistema captura variedade de gostos do usuário</li>
+                <li>👥 Baseado nos 50 usuários mais similares</li>
             </ul>
         </div>
     </div>
@@ -562,7 +522,7 @@ const slides = [
         <h1>🎬 Exemplo Real - Item-Based CF</h1>
 
         <div class="center" style="margin: 20px 0;">
-            <h2 style="color: #667eea;">Mesmo Usuário (ID: 1) - Para Comparação Direta</h2>
+            <h2 style="color: #667eea;">Mesmo Usuário (ID: 48) - Para Comparação Direta</h2>
         </div>
 
         <table>
@@ -575,38 +535,73 @@ const slides = [
             </tr>
             <tr>
                 <td>1</td>
-                <td><strong>Kara no Kyoukai 1</strong></td>
+                <td><strong>Kara no Kyoukai Remix: Gate of Seventh Heaven</strong></td>
                 <td class="highlight">7.88</td>
-                <td>7.82</td>
-                <td>Action, Mystery</td>
+                <td>7.55</td>
+                <td>Action, Mystery, Romance</td>
             </tr>
             <tr>
                 <td>2</td>
-                <td><strong>Fate/stay night</strong></td>
+                <td><strong>Kara no Kyoukai Movie: Mirai Fukuin</strong></td>
                 <td class="highlight">7.85</td>
-                <td>7.32</td>
-                <td>Action, Fantasy</td>
+                <td>8.00</td>
+                <td>Drama, Mystery, Supernatural</td>
             </tr>
             <tr>
                 <td>3</td>
-                <td><strong>Ghost in the Shell</strong></td>
-                <td class="highlight">7.80</td>
-                <td>8.04</td>
-                <td>Sci-Fi, Mecha</td>
+                <td><strong>Sakasama no Patema: Beginning of the Day</strong></td>
+                <td class="highlight">7.79</td>
+                <td>7.34</td>
+                <td>Sci-Fi</td>
             </tr>
             <tr>
                 <td>4</td>
-                <td><strong>Ergo Proxy</strong></td>
-                <td class="highlight">7.78</td>
-                <td>7.93</td>
-                <td>Mystery, Sci-Fi</td>
+                <td><strong>Koukaku Kidoutai 2.0</strong></td>
+                <td class="highlight">7.77</td>
+                <td>7.98</td>
+                <td>Action, Sci-Fi</td>
             </tr>
             <tr>
                 <td>5</td>
-                <td><strong>Serial Experiments Lain</strong></td>
+                <td><strong>Mardock Scramble: The First Compression</strong></td>
+                <td class="highlight">7.76</td>
+                <td>7.43</td>
+                <td>Action, Sci-Fi</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><strong>Fate/stay night: Unlimited Blade Works Prologue</strong></td>
+                <td class="highlight">7.76</td>
+                <td>8.04</td>
+                <td>Action, Fantasy, Supernatural</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><strong>Koukaku Kidoutai Arise: Ghost in the Shell</strong></td>
+                <td class="highlight">7.75</td>
+                <td>7.44</td>
+                <td>Sci-Fi</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><strong>ef: A Tale of Melodies.</strong></td>
+                <td class="highlight">7.74</td>
+                <td>8.00</td>
+                <td>Drama, Mystery, Romance</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><strong>Hoshi wo Ou Kodomo</strong></td>
+                <td class="highlight">7.74</td>
+                <td>7.52</td>
+                <td>Adventure, Fantasy, Romance</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><strong>Dareka no Manazashi</strong></td>
                 <td class="highlight">7.73</td>
-                <td>8.01</td>
-                <td>Sci-Fi, Mystery</td>
+                <td>7.32</td>
+                <td>Drama, Slice of Life</td>
             </tr>
         </table>
 
